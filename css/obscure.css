@@ -1,0 +1,419 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700;900&family=Raleway:wght@100;300;400;500;600;700;900&display=swap');
+
+*{
+    margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	border: none;
+	outline: none;
+    font-family: 'Raleway', sans-serif;
+}
+
+body::-webkit-scrollbar-track{
+    background: #1E213A;
+    box-shadow: inset 6px 6px 13px #111321,
+                inset -6px -6px 13px #2b2f53;
+}
+
+body::-webkit-scrollbar{
+    width: .5rem;
+}
+
+body::-webkit-scrollbar-thumb{
+   background: #E7E7EB;
+}
+
+body::-webkit-scrollbar-thumb:hover{
+    background: #6E707A;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+#container{
+    position: relative;
+    width: 375px;
+    height: 2528px;
+
+    background: #FFFFFF;
+    border-radius: 12px;
+}
+
+/* Header */
+
+#container #header{
+    position: absolute;
+    width: 375px;
+    height: 810px;
+    left: 0px;
+    top: 0px;
+    background: #1E213A;
+}
+
+#container #header #buttons #search{
+    position: absolute;
+    width: 161px;
+    height: 40px;
+    left: 11px;
+    top: 18px;
+
+    background: #6E707A;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+    color: #E7E7EB;
+}
+
+#container #header #buttons #location{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 323px;
+    top: 18px;
+
+    background: #6E707A;
+
+    border-radius: 50%;
+}
+
+#container #header #content_cloudy{
+    position: absolute;
+    width: 563.56px;
+    height: 326px;
+    left: -111px;
+    top: 58px;
+}
+
+#container #header #cloudy_content #cloudy_1{
+    position: absolute;
+    width: 176.01px;
+    height: 130.05px;
+    left: -91.93px;
+    top: 58px;
+}
+
+#container #header #cloudy_content #cloudy_2{
+    position: absolute;
+    width: 176.01px;
+    height: 130.05px;
+    left: 276.56px;
+    top: 69.27px;
+}
+
+#container #header #cloudy_content #cloudy_3{
+    position: absolute;
+    width: 215.02px;
+    height: 158.66px;
+    left: -111px;
+    top: 199.32px;
+}
+
+#container #header #cloudy_content #cloudy_4{
+    position: absolute;
+    width: 127.45px;
+    height: 94.51px;
+    left: 265.29px;
+    top: 289.49px;
+}
+
+/* Header */
+
+/* Climate */
+
+#container #climate{
+    position: absolute;
+    width: 375px;
+    height: 1718px;
+    left: 0px;
+    top: 810px;
+
+    background: #100E1D;
+}
+
+#container #climate #datadays{
+    position: absolute;
+    width: 266px;
+    height: 595px;
+    left: 54px;
+    top: 52px;
+}
+
+.dayinfo{
+    position: relative;
+    display: inline-block;
+    width: 120px;
+    height: 177px;
+
+    margin: 0px 5px 32px 5.5px;
+    background: #1E213A;
+
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+
+    text-align: center;
+    color: #E7E7EB;
+}
+
+.dayinfo #date{
+    position: relative;
+    top: 17px;
+}
+
+.dayinfo img{
+    position: absolute;
+    width: 56.44px;
+    height: 62px;
+    top: 47px;
+    left: 32px;
+    
+}
+
+.dayinfo .temperature{
+    position: relative;
+    display: inline-block;
+    margin-right: 8px;
+    margin-left: 8px;
+    top: 110px;
+}
+
+.dayinfo .temperature + p{
+    color: #A09FB1
+}
+#container #climate #hightlights{
+    position: absolute;
+    width: 330px;
+    height: 28px;
+    left: 10px;
+    top: 698px;
+    text-align: left;
+
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+
+    color: #E7E7EB;
+}
+
+/* Wind status */
+
+#container #climate #wind-status{
+    position: absolute;
+    width: 328px;
+    height: 204px;
+    left: 20px;
+    top: 758px;
+
+    background: #1E213A;
+}
+
+#wind-direction{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20.3px;
+    height: 20.3px;
+    left: 133px;
+    top: 146px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+}
+
+#wind-direction img{
+    width: 15px;
+    transform: rotate(135deg);
+}
+
+#direction{
+    position: absolute;
+    width: 38px;
+    height: 16px;
+    left: 159px;
+    top: 150px;
+
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+
+    color: #E7E7EB;
+}
+
+/* Wind status */
+
+/* Humidity */
+
+#container #climate #humidity{
+    position: absolute;
+    width: 328px;
+    height: 204px;
+    left: 20px;
+    top: 994px;
+
+    background: #1E213A;
+}
+
+.bartext{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    top: 62px;
+
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    /* identical to box height */
+
+    text-align: center;
+    color: #A09FB1;
+}
+
+.bartext div{
+    margin: 0 auto 0 auto;
+}
+
+#container #climate #humidity #loadbar{
+    position: absolute;
+    background-color: #E7E7EB;
+    width: 229px;
+    height: 8px;
+    top: 155px;
+    left: 49px;
+    border-radius: 80px;
+}
+
+#loadbar div{
+    position: relative;
+    background: #FFEC65;
+    width: 70%;
+    height: 8px;
+    border-radius: 80px;
+}
+
+/* Humidity */
+/* Visibility */
+
+#container #climate #visibility{
+    position: absolute;
+    width: 328px;
+    height: 159px;
+    left: 20px;
+    top: 1230px;
+
+    background: #1E213A;
+}
+
+/* Visibility */
+/* Air-Pressure */
+
+#container #climate #air-pressure{
+    position: absolute;
+    width: 328px;
+    height: 160px;
+    left: 20px;
+    top: 1421px;
+
+    background: #1E213A;
+}
+
+/* Air-Pressure */
+
+/* Title */
+.title{
+    position: absolute;
+    top: 22px;
+    width: 100%;
+
+
+    justify-content: center;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+    text-align: center;
+    color: #E7E7EB;
+}
+
+/* Title */
+
+/* Data */
+.data{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
+    top: 47px;
+
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 75px;
+
+    color: #E7E7EB;
+
+}
+
+.data div{
+    position: relative;
+    font-family: Raleway;
+    font-style: light;
+    font-weight: 100;
+    font-size: 40px;
+    line-height: 75px;
+
+    top: 10px;
+    left: 5px;
+}
+
+/* Data */
+
+/* Climate */
+
+
+
+#container #creator{
+    position: absolute;
+    width: 287px;
+    height: 17px;
+    left: 52px;
+    top: 2487px;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    text-align: center;
+    color: #A09FB1;
+}
+
+#container #creator a{
+    text-decoration: none;
+    color: #A09FB1;
+    font-family: 'Raleway';
+    font-weight: 700;
+}
+
+
+#container #creator a:hover{
+    color: #4169e1;
+}
