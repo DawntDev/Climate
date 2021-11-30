@@ -1,26 +1,26 @@
-<!-- Please update value in the {}  -->
+<h1>Climate</h1>
+<p>
+ <a href="https://discord.com/channels/@me/GeimerDroiid#0359">
+     <img alt="GeimerDroiid | Discord" width="24px" align="right" raw=true HSPACE="5" src="https://raw.githubusercontent.com/GeimerDroiid/GeimerDroiid/main/assets/discord.svg"></a>
+ <a href="https://open.spotify.com/playlist/6eDl0FX1pNcaFXgYIBOobX?si=aewrQ2nJTuSgkMSip3d8-Q&utm_source=copy-link">
+     <img alt="GeimerDroiid | Spotify" width="24px" align="right" raw=true HSPACE="5" src="https://raw.githubusercontent.com/GeimerDroiid/GeimerDroiid/main/assets/spotify.svg"></a>
+ <a href="https://github.com/GeimerDroiid">
+    <img alt="GeimerDroiid | Github" width="24px" align="right" raw=true HSPACE="5" src="https://raw.githubusercontent.com/GeimerDroiid/GeimerDroiid/main/assets/github.svg"></a>
+ <a href="mailto:jmanuelhv9@gmail.com">
+    <img alt="Email | jmanuelhv9@gmail.com" width="24px" align="right" raw=true HSPACE="5" src="https://raw.githubusercontent.com/GeimerDroiid/GeimerDroiid/main/assets/gmail.svg"></a>
+</p>
+<h3>About</h3>
 
-<h1 align="center">{Your project name}</h1>
+Application focused on searching the meaning of words through web scraping, besides having more functions such as Dictation, Spelling and Syllables.<br>
+I created this application as a way to test the knowledge that I have started to acquire so I decided to make this dictionary with some basic functions like spelling but from there more ideas came up, like implementing a method that would tell me the meanings of the words that I didn't understand, or a way in which I didn't have to write the word and just by telling the computer I could write it. When I created this application I was just starting to learn Python (it is the language I used for this application) so I may have a lot of bad practices in the code that I am correcting for future versions. During the creation of this application I learned how to make user interfaces, I dabbled a bit in web scraping and besides investigating a method with which I can change text to sound and play it also at the end I used object oriented programming to facilitate the creation of the interface.
 
 <div align="center">
-   Solution for a challenge from  <a href="http://devchallenges.io" target="_blank">Devchallenges.io</a>.
+<img alt="Dictionary | GUI" width="720px" src="assets/img-readme/gui.png">
+<img alt="Dictionary | GUI" height="450px" width="720px" src="assets/img-readme/syllables.png">
 </div>
 
-<div align="center">
-  <h3>
-    <a href="https://{your-demo-link.your-domain}">
-      Demo
-    </a>
-    <span> | </span>
-    <a href="https://{your-url-to-the-solution}">
-      Solution
-    </a>
-    <span> | </span>
-    <a href="https://devchallenges.io/challenges/mM1UIenRhK808W8qmLWv">
-      Challenge
-    </a>
-  </h3>
-</div>
+---
+
 
 <!-- TABLE OF CONTENTS -->
 
@@ -90,3 +90,23 @@ $ npm start
 - Website [your-website.com](https://{your-web-site-link})
 - GitHub [@your-username](https://{github.com/your-usermame})
 - Twitter [@your-twitter](https://{twitter.com/your-username})
+
+<div align="center">
+   Solution for a challenge from  <a href="http://devchallenges.io" target="_blank">Devchallenges.io</a>.
+</div>
+
+<div align="center">
+  <h3>
+    <a href="https://{your-demo-link.your-domain}">
+      Demo
+    </a>
+    <span> | </span>
+    <a href="https://{your-url-to-the-solution}">
+      Solution
+    </a>
+    <span> | </span>
+    <a href="https://devchallenges.io/challenges/mM1UIenRhK808W8qmLWv">
+      Challenge
+    </a>
+  </h3>
+</div>
