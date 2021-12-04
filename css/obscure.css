@@ -68,7 +68,7 @@ body::-webkit-scrollbar-thumb:hover{
     color: #E7E7EB;
 }
 
-#container #header #buttons #location{
+#container #header #buttons #geolocation{
     position: absolute;
     width: 40px;
     height: 40px;
@@ -120,6 +120,127 @@ body::-webkit-scrollbar-thumb:hover{
     top: 289.49px;
 }
 
+#container #header #climate_today{
+    position: absolute;
+    width: 150px;
+    height: 174px;
+    left: 113px;
+    top: 134px;
+}
+
+#container #header #climate_today img{
+    display: block;
+    width: 150px;
+    height: 174px;
+    left: 113px;
+    top: 134px;
+    object-fit: contain;
+}
+
+#container #header #temperature{
+    position: absolute;
+    width: 100%;
+    height: 169px;
+    top: 348px;
+    text-align: center;
+
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 144px;
+    line-height: 169px;
+    /* identical to box height */
+    color: #E7E7EB;
+}
+
+#container #header #temperature p{
+    display: inline-block;
+    position: relative;
+    left: 20px;
+}
+
+#container #header #temperature p + p{
+    position: relative;
+    display: inline-block;
+    color: #A09FB1;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 56,35px;
+
+    left: -15px;
+}
+
+#container #header #weather{
+    position: absolute;
+    width: 100%;
+    height: 42px;
+
+    top: 540px;
+
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+
+    color: #A09FB1;
+}
+
+#container #header #datetime{
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    height: 21px;
+    top: 630px;
+
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+
+    color: #88869D;
+}
+
+#container #header #datetime p{
+    display: inline-block;
+    position: relative;
+    margin: auto;
+}
+
+#container #header #location{
+
+    position: absolute;
+    width: 100%;
+    height: 21px;
+    align-items: center;
+    text-align: center;
+    top: 684px;
+    display: inline-block;
+
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+
+
+    color: #88869D;
+}
+#container #header #location img{
+    display: inline-block;
+    position: relative;
+    margin: auto;
+
+}
+
+#container #header #location p{
+    display: inline-block;
+    position: relative;
+    margin: auto;
+    top: -5px;
+}
 /* Header */
 
 /* Climate */
@@ -173,6 +294,7 @@ body::-webkit-scrollbar-thumb:hover{
     height: 62px;
     top: 47px;
     left: 32px;
+    object-fit: contain;
     
 }
 

@@ -1,7 +1,26 @@
-var woeid;
-var weather;
-var days;
-var coords = [];
+if (localStorage.getItem('woeid')) {
+    var woeid = JSON.parse(localStorage.getItem('woeid'));
+} else {
+    var woeid;
+}
+if (localStorage.getItem('weather')) {
+    var weather = JSON.parse(localStorage.getItem('weather'));
+    setData(weather);
+} else {
+    var weather;
+}
+
+if (localStorage.getItem('days')) {
+    var days = JSON.parse(localStorage.getItem('days'));
+} else {
+    var days;
+}
+if (localStorage.getItem('coords')) {
+    var coords = JSON.parse(localStorage.getItem('coords'));
+} else {
+    var coords = [];
+}
+
 
 function getLocation() {
     return new Promise((resolve, reject) => {    
@@ -9,12 +28,14 @@ function getLocation() {
         navigator.geolocation.getCurrentPosition(function (position) {
             let lat = position.coords.latitude
             let long = position.coords.longitude
-            if (lat === coords[0] && long === coords[1]) {
+            if (lat == coords[0] && long == coords[1]) {
                 resolve(woeid);
             } else {
                 coords = [lat, long];
+                localStorage.setItem('coords', JSON.stringify(coords));
                 axios.get(
-                    `https://www.metaweather.com/api/location/search/?lattlong=${lat},${long}`).then(res => {
+                    `https://pacific-springs-75759.herokuapp.com/https://www.metaweather.com/api/location/search/?lattlong=${lat},${long}`).then(res => {
+                        localStorage.setItem('woeid', res.data[0].woeid);
                         resolve(res.data[0].woeid)
                     }).catch(err => {
                         reject(err)
@@ -28,73 +49,100 @@ function getLocation() {
 }
 
 function getWeather(woeid) {
-    console.log("Peticion Weather");
     return new Promise((resolve, reject) => {
-        axios.get(`https://www.metaweather.com/api/location/${woeid}/`).then(res => {
-            resolve(res.data)
-        }).catch(err => {
-            reject(err)
-        });
+        axios.get(
+            `https://pacific-springs-75759.herokuapp.com/https://www.metaweather.com/api/location/${woeid}/`).then(res => {
+                localStorage.setItem('weather', JSON.stringify(res.data));
+                resolve(res.data)
+            }).catch(err => {reject(err)});
 
     });
 }
 
 async function setData(data) {
     try {
+        const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        const dayNames = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+
+        // Header
+        // Climate Today
+        document.querySelector("#climate_today").innerHTML = `<img id="sun" src="/assets/climate/${data.consolidated_weather[0].weather_state_abbr}.png" alt="sun">`;
+        // Climate Today
+        //Temperature
+        document.querySelector("#temperature").firstElementChild.innerHTML = `${Math.round(data.consolidated_weather[0].the_temp)}`;
+        //Temperature
+        //Weather
+        document.querySelector("#weather").firstElementChild.innerHTML = `${data.consolidated_weather[0].weather_state_name}`;
+        //Weather
+        //Date
+        {
+            let date = new Date(`${data.consolidated_weather[0].applicable_date}T00:00:00`);
+            date = `${dayNames[date.getDay()]}, ${date.getDate()} ${monthNames[date.getMonth()]}`;
+            document.querySelector("#datetime").lastElementChild.innerHTML = `${date}`;
+        }
+        //Date
+        //Location
+        document.querySelector("#location").lastElementChild.innerHTML = `${data.title}`;
+        //Location
+        // Header
+
+
         //Day info
         // Wind-Status
         let wind = data.consolidated_weather[0].wind_speed;
         let wind_direction = data.consolidated_weather[0].wind_direction_compass;
+        let compass = document.querySelector("#wind-direction").firstElementChild;
+
         document.querySelectorAll(".data")[0].firstElementChild.innerText = `${wind.toFixed(1)}`;
         document.querySelector("#direction").innerText = `${wind_direction}`;
         switch (wind_direction) {
             case "N":
-                document.querySelector("#wind-direction").firstElementChild.style.transform = "rotate(-45deg)";
+                compass.style.transform = "rotate(-45deg)";
                 break;
             case "NNE":
-                document.querySelector("#wind-direction").firstElementChild.style.transform = "rotate(-22.5deg)";
+                compass.style.transform = "rotate(-22.5deg)";
                 break;
             case "NE":
-                document.querySelector("#wind-direction").firstElementChild.style.transform = "rotate(0deg)";
+                compass.style.transform = "rotate(0deg)";
                 break;
             case "ENE":
-                document.querySelector("#wind-direction").firstElementChild.style.transform = "rotate(22.5deg)";
+                compass.style.transform = "rotate(22.5deg)";
                 break;
             case "E":
-                document.querySelector("#wind-direction").firstElementChild.style.transform = "rotate(45deg)";
+                compass.style.transform = "rotate(45deg)";
                 break;
             case "ESE":
-                document.querySelector("#wind-direction").firstElementChild.style.transform = "rotate(67.5deg)";
+                compass.style.transform = "rotate(67.5deg)";
                 break;
             case "SE":
-                document.querySelector("#wind-direction").firstElementChild.style.transform = "rotate(90deg)";
+                compass.style.transform = "rotate(90deg)";
                 break;
             case "SSE":
-                document.querySelector("#wind-direction").firstElementChild.style.transform = "rotate(112.5deg)";
+                compass.style.transform = "rotate(112.5deg)";
                 break;
             case "S":
-                document.querySelector("#wind-direction").firstElementChild.style.transform = "rotate(135deg)";
+                compass.style.transform = "rotate(135deg)";
                 break;
             case "SSW":
-                document.querySelector("#wind-direction").firstElementChild.style.transform = "rotate(157.5deg)";
+                compass.style.transform = "rotate(157.5deg)";
                 break;
             case "SW":
-                document.querySelector("#wind-direction").firstElementChild.style.transform = "rotate(180deg)";
+                compass.style.transform = "rotate(180deg)";
                 break;
             case "WSW":
-                document.querySelector("#wind-direction").firstElementChild.style.transform = "rotate(202.5deg)";
+                compass.style.transform = "rotate(202.5deg)";
                 break;
             case "W":
-                document.querySelector("#wind-direction").firstElementChild.style.transform = "rotate(225deg)";
+                compass.style.transform = "rotate(225deg)";
                 break;
             case "WNW":
-                document.querySelector("#wind-direction").firstElementChild.style.transform = "rotate(247.5deg)";
+                compass.style.transform = "rotate(247.5deg)";
                 break;
             case "NW":
-                document.querySelector("#wind-direction").firstElementChild.style.transform = "rotate(270deg)";
+                compass.style.transform = "rotate(270deg)";
                 break;
             case "NNW":
-                document.querySelector("#wind-direction").firstElementChild.style.transform = "rotate(292.5deg)";
+                compass.style.transform = "rotate(292.5deg)";
                 break;
         }
         //Wind-Status
@@ -114,23 +162,23 @@ async function setData(data) {
         //Day info
         let container = document.querySelector("#datadays")
         container.innerHTML = "";
-        data.consolidated_weather.shift();
-        const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-        const dayNames = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+
+
         days = [];
-        for (let i = 0; i < data.consolidated_weather.length; i++) {
-            let date = new Date(data.consolidated_weather[i].applicable_date);
+        for (let i = 1; i < data.consolidated_weather.length; i++) {
+            let date = new Date(`${data.consolidated_weather[i].applicable_date}T00:00:00`);
             let day = document.createElement("div");
-            if (i === 0) { date = "Tomorrow" } else { date = `${dayNames[date.getDay()]}, ${date.getDate()} ${monthNames[date.getMonth()]}` }
+            if (i === 1) { date = "Tomorrow" } else { date = `${dayNames[date.getDay()]}, ${date.getDate()} ${monthNames[date.getMonth()]}` }
             day.classList.add("dayinfo");
             day.innerHTML = `
             <p id="date">${date}</p>
-            <img src="https://www.metaweather.com/static/img/weather/${data.consolidated_weather[i].weather_state_abbr}.svg" alt="Snow">
+            <img src="assets/climate/${data.consolidated_weather[i].weather_state_abbr}.png" alt="${data.consolidated_weather[i].weather_state_name}">
             <p class="temperature">${Math.round(data.consolidated_weather[i].max_temp)}°C</p>
             <p class="temperature">${Math.round(data.consolidated_weather[i].min_temp)}°C</p>
             `
             days.push(day);
         }
+        localStorage.setItem("days", JSON.stringify(days));
         for (let i = 0; i < days.length; i++) {
             document.querySelector("#datadays").appendChild(days[i]);
         }
@@ -148,9 +196,8 @@ async function setData(data) {
     }
 }
 
-document.querySelector("#location").addEventListener("click", async () => {
+document.querySelector("#geolocation").addEventListener("click", async () => {
     woeid = await getLocation().then((res) => { return (res) }).catch((err) => { alert(err) });
     weather = await getWeather(woeid).then((res) => { return (res) }).catch((err) => { alert(err) });
-    console.log(weather);
     setData(weather);
 });
