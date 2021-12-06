@@ -33,9 +33,9 @@ I created this extension because I found the idea in a web page called <a href="
 ## Overview
 
 <div align="center">
-  <img alt="Header" height="620px" src="assets\img-readme\header.png">
-  <img alt="Day-Info" height="620px" src="assets\img-readme\data-day.png">
-  <img alt="Hightlights" height="620px" src="assets\img-readme\hightlights.png">
+  <img alt="Header" height="480px" src="assets\img-readme\header.png">
+  <img alt="Day-Info" height="480px" src="assets\img-readme\data-day.png">
+  <img alt="Hightlights" height="480px" src="assets\img-readme\hightlights.png">
 </div>
 
 The entire project was created with HTLM, CSS and JavaScript in addition to the use of certain repositories such as axios and cors-anywhere for certain vital aspects of the project.
