@@ -110,12 +110,10 @@ This application/site was created as a submission to a [devChallenges](https://d
 **If you wish to contribute to the development of the extension:**
   - First clone the repository
     ```bash
-    # Clone the repository
     git clone https://github.com/GeimerDroiid/Climate.git
     ```
   - Then create a branch with your user name
     ```bash
-    # Create a branch
     git checkout -b <your-user-name>
     ```
   Pull requests are welcome, I would appreciate your support to contribute to a better development of this application. For major changes, please open an issue to discuss what you would like to change.
