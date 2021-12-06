@@ -83,20 +83,20 @@ This application/site was created as a submission to a [devChallenges](https://d
 
   - Chrome
 
-    2. Open Chrome
-    3. Click on the extensions icon
-    4. Click on manage extensions
-    5. Activate developer mode (click on the switch in the upper right corner)
-    6. Click on load unzipped
-    7. Navigate to the location of the folder, which generated the zip file and select the folder
+    <p>2. Open Chrome</p>
+    <p>3. Click on the extensions icon</p>
+    <p>4. Click on manage extensions</p>
+    <p>5. Activate developer mode (click on the switch in the upper right corner)</p>
+    <p>6. Click on load unzipped</p>
+    <p>7. Navigate to the location of the folder, which generated the zip file and select the folder</p>
 
   - Microsoft Edge
 
-    2. Open Microsoft Edge
-    3. Press Alt + F and go to extensions
-    4. Click on manage extensions
-    5. Click on load unpacked
-    6. Navigate to the location of the folder, which generated the zip file and select the folder
+    <p>2. Open Microsoft Edge</p>
+    <p>3. Press Alt + F and go to extensions</p>
+    <p>4. Click on manage extensions</p>
+    <p>5. Click on load unpacked</p>
+    <p>6. Navigate to the location of the folder, which generated the zip file and select the folder</p>
 
 **Extensions Store**
 
