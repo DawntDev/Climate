@@ -80,6 +80,11 @@ body::-webkit-scrollbar-thumb:hover{
     border-radius: 50%;
 }
 
+#container #header #buttons #geolocation:active{
+    background: #2b2f53;
+}
+
+
 #container #header #content_cloudy{
     position: absolute;
     width: 563.56px;

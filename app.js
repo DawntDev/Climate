@@ -21,6 +21,20 @@ if (localStorage.getItem('coords')) {
     var coords = [];
 }
 
+if (localStorage.getItem('time')) {
+    console.log(localStorage.getItem('time'));
+    var time = new Date(localStorage.getItem('time'));
+    if (time.getDate() != new Date().getDate()) {
+        if (woeid) {
+            weather = getWeather(woeid);
+            console.log(weather, "New Day");
+            setData(weather);
+        }
+        
+    }
+} else {
+    var time;
+}
 
 function getLocation() {
     return new Promise((resolve, reject) => {    
@@ -52,7 +66,9 @@ function getWeather(woeid) {
     return new Promise((resolve, reject) => {
         axios.get(
             `https://pacific-springs-75759.herokuapp.com/https://www.metaweather.com/api/location/${woeid}/`).then(res => {
+                time = new Date();
                 localStorage.setItem('weather', JSON.stringify(res.data));
+                localStorage.setItem('time', time);
                 resolve(res.data)
             }).catch(err => {reject(err)});
 
@@ -160,7 +176,7 @@ async function setData(data) {
         document.querySelectorAll(".data")[3].firstElementChild.innerText = `${Math.round(air_pressure)}`;
         //Pressure
         //Day info
-        let container = document.querySelector("#datadays")
+        let container = document.querySelector("#datadays");
         container.innerHTML = "";
 
 

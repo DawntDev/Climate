@@ -5,8 +5,10 @@
   "author": "Juan Manuel",
   "description": "Web extension for visualization of weather and other climate components.",
   "icons": {
-    "16": "/assets/icons/icon.png",
-    "128": "/assets/icons/icon.png"
+      "16": "assets/icons/icon48.png",
+      "32": "assets/icons/icon48.png",
+      "48": "assets/icons/icon96.png",
+      "128": "assets/icons/icon144.png"
   },
   "browser_action": {
     "default_popup": "index.html" 

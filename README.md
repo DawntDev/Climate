@@ -11,102 +11,125 @@
 </p>
 <h3>About</h3>
 
-Application focused on searching the meaning of words through web scraping, besides having more functions such as Dictation, Spelling and Syllables.<br>
-I created this application as a way to test the knowledge that I have started to acquire so I decided to make this dictionary with some basic functions like spelling but from there more ideas came up, like implementing a method that would tell me the meanings of the words that I didn't understand, or a way in which I didn't have to write the word and just by telling the computer I could write it. When I created this application I was just starting to learn Python (it is the language I used for this application) so I may have a lot of bad practices in the code that I am correcting for future versions. During the creation of this application I learned how to make user interfaces, I dabbled a bit in web scraping and besides investigating a method with which I can change text to sound and play it also at the end I used object oriented programming to facilitate the creation of the interface.
-
-<div align="center">
-<img alt="Dictionary | GUI" width="720px" src="assets/img-readme/gui.png">
-<img alt="Dictionary | GUI" height="450px" width="720px" src="assets/img-readme/syllables.png">
-</div>
+Web extension for visualization of weather and other climate components.<br>
+I created this extension because I found the idea in a web page called <a href="https://devchallenges.io/">devChallenges</a>. It proposed the creation of a web page where you could get information about the weather through an API and thus be able to use the data returned to us to display them on the page. I decided that instead of a web page it would be better to encapsulate everything in an extension. When creating the extension I encountered a problem which was the CORS protocol that prevented me from using the API. In the end I managed to solve it by setting up a personal CORS proxy to act as an intermediary between the extension and the API. I found this project very entertaining as I was able to put into practice my knowledge about JS and the use of APIs.
 
 ---
-
 
 <!-- TABLE OF CONTENTS -->
 
 ## Table of Contents
 
 - [Overview](#overview)
-  - [Built With](#built-with)
 - [Features](#features)
 - [How to use](#how-to-use)
-- [Contact](#contact)
+- [Contributions](#contributions)
 - [Acknowledgements](#acknowledgements)
+
+---
 
 <!-- OVERVIEW -->
 
 ## Overview
 
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+<div align="center">
+  <img alt="Header" height="720px" src="assets\img-readme\header.png">
+  <img alt="Day-Info" height="720px" src="assets\img-readme\data-day.png">
+  <img alt="Hightlights" height="720px" src="assets\img-readme\hightlights.png">
+</div>
 
-Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
+The entire project was created with HTLM, CSS and JavaScript in addition to the use of certain repositories such as axios and cors-anywhere for certain vital aspects of the project.
 
-- Where can I see your demo?
-- What was your experience?
-- What have you learned/improved?
-- Your wisdom? :)
+- Functioning
+  - You get information about the weather through a 32-bit reference identifier (Woeid) that is obtained through a request. It takes as data your current Latitude and Longitude and when you receive all this information it is stored in local storage so that you don't have to ask for the information every time you close or open the extension. It also has a function that detects when the day has changed and automatically updates the weather information.
+- Use of [Axios](https://github.com/axios/axios)
+  - Axios is a JavaScript library that can be executed in the browser and allows us to make HTTP client operations easy, so we can configure and make requests to a server and receive easy-to-process responses.
+- Use of [Cors-Anywhere](https://github.com/Rob--W/cors-anywhere)
+  - CORS Anywhere is a NodeJS proxy which adds CORS headers to the proxied request.Thanks to it we were able to communicate with the API without any problem. By creating a personal proxy this [solution](https://stackoverflow.com/a/43881141) comes from user sideshowbarker on StackOverflow.
+- What I learned
+  - During the development of this project I learned a lot about the use of APIs and web requests I also put into practice the use of asynchronous functions and other things that I had not used before in JavaScript.
 
-### Built With
-
-<!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
-
-- [React](https://reactjs.org/)
-- [Vue.js](https://vuejs.org/)
-- [Tailwind](https://tailwindcss.com/)
+---
 
 ## Features
 
-<!-- List the features of your application or follow the template. Don't share the figma file here :) -->
+Inside the extension we will be able to find:
+- A button to get the information of your current location.
+<!-- - A button to get the information of a specific location. -->
+The information displayed on the screen will be:
+- Temperature
+- Climate
+- Current date
+- Current location
+- Weekly forecast
+  - Forecast date
+  - Forecast temperature max
+  - Forecast temperature min
+- Today’s Hightlights
+  - Wind status
+  - Humidity
+  - Visibility 
+  - Air pressure
 
-This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/challenges) challenge. The [challenge](https://devchallenges.io/challenges/mM1UIenRhK808W8qmLWv) was to build an application to complete the given user stories.
+This application/site was created as a submission to a [devChallenges](https://devchallenges.io/challenges) challenge. The [challenge](https://devchallenges.io/challenges/mM1UIenRhK808W8qmLWv) was to build an application to complete the given user stories.
+
+---
 
 ## How To Use
 
-<!-- Example: -->
+**Manual installation**
 
-To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+  1. Download the zip file and unzip it
 
-```bash
-# Clone this repository
-$ git clone https://github.com/your-user-name/your-project-name
+  - Chrome
 
-# Install dependencies
-$ npm install
+    2. Open Chrome
+    3. Click on the extensions icon
+    4. Click on manage extensions
+    5. Activate developer mode (click on the switch in the upper right corner)
+    6. Click on load unzipped
+    7. Navigate to the location of the folder, which generated the zip file and select the folder
 
-# Run the app
-$ npm start
-```
+  - Microsoft Edge
+
+    2. Open Microsoft Edge
+    3. Press Alt + F and go to extensions
+    4. Click on manage extensions
+    5. Click on load unpacked
+    6. Navigate to the location of the folder, which generated the zip file and select the folder
+
+**Extensions Store**
+
+  > Coming soon
+
+
+---
+
+## Contributions
+
+**If you wish to contribute to the development of the extension:**
+  - First clone the repository
+    ```bash
+    # Clone the repository
+    git clone https://github.com/GeimerDroiid/Climate.git
+    ```
+  - Then create a branch with your user name
+    ```bash
+    # Create a branch
+    git checkout -b <your-user-name>
+    ```
+  Pull requests are welcome, I would appreciate your support to contribute to a better development of this application. For major changes, please open an issue to discuss what you would like to change.
+
+---
 
 ## Acknowledgements
 
-<!-- This section should list any articles or add-ons/plugins that helps you to complete the project. This is optional but it will help you in the future. For example: -->
+- [devChallenges](https://devchallenges.io/challenges)
+- [Axios](https://github.com/axios/axios)
+- [Cors-Anywhere](https://github.com/Rob--W/cors-anywhere)
+- [sideshowbarker](https://stackoverflow.com/users/441757/sideshowbarker)
 
-- [Steps to replicate a design with only HTML and CSS](https://devchallenges-blogs.web.app/how-to-replicate-design/)
-- [Node.js](https://nodejs.org/)
-- [Marked - a markdown parser](https://github.com/chjj/marked)
-
-## Contact
-
-- Website [your-website.com](https://{your-web-site-link})
-- GitHub [@your-username](https://{github.com/your-usermame})
-- Twitter [@your-twitter](https://{twitter.com/your-username})
 
 <div align="center">
    Solution for a challenge from  <a href="http://devchallenges.io" target="_blank">Devchallenges.io</a>.
-</div>
-
-<div align="center">
-  <h3>
-    <a href="https://{your-demo-link.your-domain}">
-      Demo
-    </a>
-    <span> | </span>
-    <a href="https://{your-url-to-the-solution}">
-      Solution
-    </a>
-    <span> | </span>
-    <a href="https://devchallenges.io/challenges/mM1UIenRhK808W8qmLWv">
-      Challenge
-    </a>
-  </h3>
 </div>
