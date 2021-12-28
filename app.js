@@ -207,7 +207,7 @@ async function setData(data) {
         } else if (woeid) {
             weather = await getWeather(woeid).then((res) => { return (res) }).catch((err) => { alert(err) });
         } else {
-            alert("Error Ultra mega grave que verga hiciste?");
+            alert("Serious Error");
         }
     }
 }
