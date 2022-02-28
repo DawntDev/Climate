@@ -1,31 +1,260 @@
+:root {
+	--sunny-bg: linear-gradient(to right, #f6d365 0%, #fda085 100%);
+}
+
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30vw;
-    height: 27vh;
-    border-bottom-left-radius: 2rem;
-    border-bottom-right-radius: 2rem;
-    background: rgba(255, 255, 255, 0.1);
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
-    box-shadow: 0 25px 25px rgba(0, 0, 0, 0.1);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 30rem;
+	height: 15rem;
+	transition: all cubic-bezier(0.77, 0, 0.175, 1) 0.3s;
+	background: var(--sunny-bg);
 }
 
 .container button {
-    position: absolute;
-    padding: .5rem;
-    top: 1rem;
-    right: 1rem;
-    border: none;
-    background: none;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out;
+	position: absolute;
+	padding: 1rem;
+	top: 0;
+	left: 26rem;
+	border: none;
+	background: none;
+	cursor: pointer;
+	transition: transform 0.2s ease-in-out;
 }
 
 .container button:hover{
-    transform: scale(1.1);
+	transform: scale(1.1);
 }
 .container button.active {
-    transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+
+.container div.loading{
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.5);
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 2em;
+	color: #fff;
+	transition: all cubic-bezier(0.77, 0, 0.175, 1) 0.3s;
+}
+
+.container div.loading div.spinner{
+	  border: 4px solid rgba(0, 0, 0, 0.1);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border-left-color: #fff;
+
+  animation: spin 1s ease infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.climate {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+}
+
+.climate .status {
+	position: relative;
+	display: flex;
+	top: -2rem;
+	left: -2rem;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.climate .status img {
+	position: relative;
+	padding: 1.5rem 0;
+	left: -2rem;
+	width: 8rem;
+}
+
+.climate .status div {
+	display: flex;
+	position: relative;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	left: -1.5rem;
+}
+
+.climate .data {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.climate .data .temp {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+}
+
+.climate .data .temp .value {
+	display: flex;
+	position: relative;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	top: -.5rem;
+	width: 100%;
+}
+
+.data .temp .value p:first-child{
+	font-size: 3.5rem;
+	font-weight: bold;
+}
+
+.data .temp .value p:last-child{
+	position: relative;
+	font-size: 1.5rem;
+	font-weight: lighter;
+	top: 1rem;
+	margin-left: .2rem;
+}
+
+.climate .data .temp p {
+	font-size: 1.5rem;
+}
+
+.climate .data .date {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	padding-top: 1rem;
+	width: 100%;
+}
+
+.data > div.date > p:nth-child(2) {
+	margin: 0 .3em;
+	font-weight: 800;
+}
+
+.configs {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+}
+
+.configs #form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+}
+
+#form h3 {
+	position: relative;
+	font-size: 1.5em;
+	font-weight: bold;
+	margin-top: -1.5rem;
+	padding: 1rem 0;
+}
+
+#form .config-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: .5rem 0;
+}
+
+.config-item label {
+	font-size: 1em;
+	font-weight: bold;
+	margin: 0;
+}
+
+.config-item select {
+	width: 100%;
+	height: 2.5rem;
+	border: none;
+	border-radius: .5rem;
+	padding: .5rem;
+	font-size: 1em;
+	font-weight: bold;
+	margin: .5rem 0;
+	color: #000;
+}
+
+.config-item select:focus {
+	outline: none;
+
+}
+
+.config-item select option{
+	color: #000;
+}
+
+.config-item input {
+	width: 100%;
+	height: 2.5rem;
+	border: none;
+	border-radius: .5rem;
+	padding: .5rem;
+	font-size: 1em;
+	font-weight: bold;
+	margin: .5rem 0;
+	color: #000;
+	transition: transform .2s ease-in-out;
+}
+
+.config-item input:hover {
+	transform: scale(1.1);
+}
+
+.config-item input:active {
+	background-color: #d0d0d0;
+}
+
+#form input[type="submit"] {
+	width: 100%;
+	height: 3rem;
+	border: none;
+	margin-top: 1rem;
+	font-size: 1em;
+	font-weight: bold;
+	color: #000;
+	transition: all .2s ease-in-out;
+}
+
+#form input[type="submit"]:hover {
+	transform: scaleY(1.1);
+}
+
+#form input[type="submit"]:active {
+	background-color: #c7c7c7;
 }
