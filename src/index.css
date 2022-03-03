@@ -1,17 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700;900&family=Raleway:wght@100;300;400;500;600;700;900&display=swap");
 
 * {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	text-decoration: none;
-	border: none;
-	outline: none;
-	font-family: "Raleway", sans-serif;
-	color: #fff;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: "Raleway", sans-serif;
+    color: #fff;
 }
 
 #root {
-	width: 30rem;
-	height: 15rem;
+    width: 30rem;
+    height: 15rem;
 }

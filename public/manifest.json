@@ -1,21 +1,21 @@
 {
-	"name": "Climate",
-	"version": "0.3.0",
-	"manifest_version": 2,
-	"author": "Juan Manuel",
-	"description": "Web extension for visualization of weather and other climate components.",
-	"icons": {
-		"16": "assets/icons/icon48.png",
-		"32": "assets/icons/icon48.png",
-		"48": "assets/icons/icon96.png",
-		"128": "assets/icons/icon144.png"
-	},
-	"browser_action": {
-		"default_popup": "index.html"
-	},
-	"permissions": [
-		"https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js",
-		"geolocation"
-	],
-	"content_security_policy": "script-src 'self' 'unsafe-eval' https://cdn.jsdelivr.net; object-src 'self'"
+    "name": "Climate",
+    "version": "0.3.0",
+    "manifest_version": 2,
+    "author": "Juan Manuel",
+    "description": "Web extension for visualization of weather and other climate components.",
+    "icons": {
+        "16": "assets/icons/icon48.png",
+        "32": "assets/icons/icon48.png",
+        "48": "assets/icons/icon96.png",
+        "128": "assets/icons/icon144.png"
+    },
+    "browser_action": {
+        "default_popup": "index.html"
+    },
+    "permissions": [
+        "https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js",
+        "geolocation"
+    ],
+    "content_security_policy": "script-src 'self' 'unsafe-eval' https://cdn.jsdelivr.net; object-src 'self'"
 }
