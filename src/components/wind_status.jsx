@@ -38,5 +38,5 @@ export default function WindStatus(props) {
                 <p>{props.direction}</p>
             </div>
         </div>
-    )
+    );
 };

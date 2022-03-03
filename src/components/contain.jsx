@@ -12,7 +12,7 @@ export default function Contain(props) {
     const [weather, setWeather] = useState(null);
     const [today, setToday] = useState(null);
 
-    const getData = (callback, woeid, date) => {
+    const getData = (callback, woeid) => {
         return new Promise(async (resolve, reject) => {
             await callback(`location/${woeid}/`)
                 .then(res => {
@@ -22,6 +22,28 @@ export default function Contain(props) {
                 });
         });
     };
+
+    useEffect(() => { 
+        if (today) {
+            const background = {
+                "sunny": (elem) => elem.style.background = "var(--sunny)",
+                "cloudy": (elem) => elem.style.background = "var(--cloudy)",
+                "snowy": (elem) => elem.style.background = "var(--snowy)",
+                "clear": (elem) => elem.style.background = "var(--clear)"
+            };
+            
+            let elem = document.querySelector(".container");
+            if (today.weather_state_abbr === "c") {
+                background.sunny(elem);
+            } else if (["hc", "hr", "lr", "s", "t"].includes(today.weather_state_abbr)) {
+                background.cloudy(elem);
+            } else if (["h", "sl", "sn"].includes(today.weather_state_abbr)) {
+                background.snowy(elem);
+            } else {
+                background.clear(elem);
+            };
+        };
+    }, [today]);
 
     useEffect(() => {
         if (title && weather) {

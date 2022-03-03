@@ -22,5 +22,5 @@ export default function Humidity(props) {
                 <div></div>
             </div>
         </div>
-    )
+    );
 };

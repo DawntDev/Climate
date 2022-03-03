@@ -9,5 +9,5 @@ export default function Visibility(props) {
                 <p>miles</p>
             </div>
         </div>
-    )
+    );
 };

@@ -9,5 +9,5 @@ export default function AirPressure(props) {
                 <p>mb</p>
             </div>
         </div>
-    )
+    );
 };

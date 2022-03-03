@@ -1,6 +1,8 @@
 :root {
-    --sunny-bg: linear-gradient(to right, #f6d365 0%, #fda085 100%);
-    --normal: linear-gradient(to right, #00c6fb 0%, #005bea 100%);
+    --sunny: linear-gradient(to right, #ff7b00 0%, #ffea00 100%);
+    --cloudy: linear-gradient(to right, #000b25 0%, #1d4e89 100%);
+    --snowy: linear-gradient(to right, #83a8ff 0%, #cbdcfa 100%);
+    --clear: linear-gradient(to right, #00c6fb 0%, #005bea 100%);
 }
 
 .container {
@@ -10,7 +12,7 @@
     width: 30rem;
     height: 15rem;
     transition: all 0.5s ease;
-    background: var(--normal);
+    background: var(--cloudy);
 }
 
 .container button {
