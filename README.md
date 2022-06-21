@@ -1,6 +1,6 @@
 <h1>Climate</h1>
 <p>
- <a href=#">
+ <a href="https://discord.gg/mexicodev">
      <img alt="Dawnt | Discord" width="24px" align="right" raw=true HSPACE="5" src="https://discord.com/assets/847541504914fd33810e70a0ea73177e.ico"></a>
  <a href="https://open.spotify.com/playlist/6eDl0FX1pNcaFXgYIBOobX?si=aewrQ2nJTuSgkMSip3d8-Q&utm_source=copy-link">
      <img alt="Dawnt | Spotify" width="24px" align="right" raw=true HSPACE="5" src="https://open.scdn.co/cdn/images/favicon32.8e66b099.png"></a>
